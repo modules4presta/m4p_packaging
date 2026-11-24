@@ -142,6 +142,26 @@
         <source>{count, plural, one {# pc} other {# pcs}}</source>
         <target state="final">{count, plural, one {# pc} other {# pcs}}</target>
       </trans-unit>
+      <trans-unit id="9a7e58ee13cb727cb7c4acc68f4cafe5">
+        <source>Settings saved.</source>
+        <target state="final">Settings saved.</target>
+      </trans-unit>
+      <trans-unit id="e8d86143d12a8d93871d0fc03d1faf58">
+        <source>Settings not saved. Try again.</source>
+        <target state="final">Settings not saved. Try again.</target>
+      </trans-unit>
+      <trans-unit id="91898380a6d95c556e23083923e0ff3a">
+        <source>Customer groups with arranged delivery only</source>
+        <target state="final">Customer groups with arranged delivery only</target>
+      </trans-unit>
+      <trans-unit id="79172e0cd7f41fb4438746e36ffd72ca">
+        <source>A customer in a selected group (default or additional) sees only arranged delivery at checkout, whatever the cart holds.</source>
+        <target state="final">A customer in a selected group (default or additional) sees only arranged delivery at checkout, whatever the cart holds.</target>
+      </trans-unit>
+      <trans-unit id="c9cc8cce247e49bae79f15173ce97354">
+        <source>Save</source>
+        <target state="final">Save</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

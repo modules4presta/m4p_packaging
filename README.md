@@ -23,7 +23,7 @@ Each package of a product becomes a combination in one attribute group ("Package
 - **Packages per product** – pieces per package, gross price per package and minimum number of packages.
 - **Real prices on the product page** – tiles show the price PrestaShop charges for the combination (tax display, specific prices and group reductions included) and the price per piece.
 - **Minimum order** – stored as the combination's minimal quantity, so PrestaShop enforces it in the cart; the tile shows it when it is above one package.
-- **Arranged delivery** – the module's carrier is offered only when the cart reaches a product's threshold.
+- **Arranged delivery** – the module's carrier is the only delivery option when the cart reaches a product's threshold or the customer belongs to a selected group, and is hidden otherwise.
 - **Keyboard and screen readers** – the selector is a native radio group in a fieldset.
 
 ### How packages map to combinations
@@ -38,11 +38,19 @@ The combination price is recalculated whenever the product is saved (`actionObje
 
 ### Arranged delivery rule
 
-The carrier created by the module is removed from the delivery options unless **at least one** product with packages reaches its threshold: pieces of that product in the cart (packages x pieces per package, summed over its packages) ≥ threshold. Other products in the cart do not count towards or against it. A threshold of 0 never unlocks the carrier. When the rule is met, the carrier is the only delivery option.
+The carrier created by the module is removed from the delivery options unless **at least one** product with packages reaches its threshold: pieces of that product in the cart (packages x pieces per package, summed over its packages) ≥ threshold. Other products in the cart do not count towards or against it. A threshold of 0 never unlocks the carrier. A customer in one of the groups selected in the module settings (default or additional group) meets the rule whatever the cart holds. When the rule is met, the carrier is the only delivery option.
+
+### Settings
+
+Modules > Module Manager > Package variants > Configure:
+
+| Setting | Effect |
+|---|---|
+| Customer groups with arranged delivery only | customers in these groups see only arranged delivery at checkout; none selected by default |
 
 ### Uninstalling
 
-Uninstalling deletes the module's tables and settings and marks its carrier as deleted. The attribute group, its values and the product combinations stay, because orders refer to them. Installing again reuses the group (found by name) and restores the carrier.
+Uninstalling deletes the module's tables and settings (`M4P_PACKAGING_ATTRIBUTE_GROUP`, `M4P_PACKAGING_CARRIER_REFERENCE`, `M4P_PACKAGING_ARRANGED_GROUPS`) and marks its carrier as deleted. The attribute group, its values and the product combinations stay, because orders refer to them. Installing again reuses the group (found by name) and restores the carrier.
 
 ## Compatibility
 

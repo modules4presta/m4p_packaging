@@ -20,6 +20,7 @@ if (!defined('_PS_VERSION_')) {
 class M4pPackagingCarrier
 {
     public const CONFIG_REFERENCE = 'M4P_PACKAGING_CARRIER_REFERENCE';
+    public const CONFIG_GROUPS = 'M4P_PACKAGING_ARRANGED_GROUPS';
 
     public static function getCarrierId(): int
     {
@@ -65,8 +66,8 @@ class M4pPackagingCarrier
     }
 
     /**
-     * Leaves only the delivery options with the carrier when a product in the cart reaches its threshold, and removes
-     * them otherwise.
+     * Leaves only the delivery options with the carrier when a product in the cart reaches its threshold or the
+     * customer belongs to one of the selected groups, and removes them otherwise.
      *
      * @param array<int, array<string, array<string, mixed>>> $deliveryOptions Cart::getDeliveryOptionList() result
      *
@@ -79,7 +80,7 @@ class M4pPackagingCarrier
             return $deliveryOptions;
         }
 
-        $keepCarrier = M4pPackagingThreshold::isReached($cart);
+        $keepCarrier = self::isCustomerInArrangedGroup($cart) || M4pPackagingThreshold::isReached($cart);
         foreach ($deliveryOptions as $idAddress => $options) {
             $carrierOptions = array_filter(
                 $options,
@@ -93,6 +94,38 @@ class M4pPackagingCarrier
         }
 
         return $deliveryOptions;
+    }
+
+    /**
+     * @return int[]
+     */
+    public static function getArrangedGroupIds(): array
+    {
+        $groupIds = json_decode((string) Configuration::getGlobalValue(self::CONFIG_GROUPS), true);
+
+        return is_array($groupIds) ? array_values(array_filter(array_map('intval', $groupIds))) : [];
+    }
+
+    /**
+     * @param int[] $groupIds
+     */
+    public static function saveArrangedGroupIds(array $groupIds): bool
+    {
+        $groupIds = array_values(array_unique(array_filter(array_map('intval', $groupIds))));
+
+        return Configuration::updateGlobalValue(self::CONFIG_GROUPS, json_encode($groupIds));
+    }
+
+    private static function isCustomerInArrangedGroup(Cart $cart): bool
+    {
+        $arrangedGroupIds = self::getArrangedGroupIds();
+        if ($arrangedGroupIds === [] || (int) $cart->id_customer <= 0) {
+            return false;
+        }
+
+        $customerGroupIds = array_map('intval', Customer::getGroupsStatic((int) $cart->id_customer));
+
+        return array_intersect($arrangedGroupIds, $customerGroupIds) !== [];
     }
 
     private static function findModuleCarrier(string $moduleName): int
