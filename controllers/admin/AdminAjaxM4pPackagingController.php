@@ -32,7 +32,7 @@ class AdminAjaxM4pPackagingController extends ModuleAdminController
         $action = (string) Tools::getValue('m4p_action');
         $permission = $action === 'savePackages' ? 'UPDATE' : 'READ';
 
-        if (!$this->isTokenValid() || !$this->canAccessProducts($permission)) {
+        if (!$this->checkToken() || !$this->canAccessProducts($permission)) {
             $this->jsonResponse(['success' => false, 'error' => $this->trans('Access denied.', [], 'Modules.M4ppackaging.Admin')], 403);
         }
 

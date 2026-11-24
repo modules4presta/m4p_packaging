@@ -43,7 +43,7 @@ class M4p_packaging extends Module
     {
         $this->name = 'm4p_packaging';
         $this->tab = 'pricing_promotion';
-        $this->version = '1.1.0';
+        $this->version = '1.2.0';
         $this->author = 'Modules4Presta';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = ['min' => '9.0.0', 'max' => _PS_VERSION_];
@@ -67,7 +67,8 @@ class M4p_packaging extends Module
             && $this->registerHook(self::HOOKS)
             && $this->installTab()
             && M4pPackagingCarrier::ensureCarrier($this->name) > 0
-            && M4pPackagingAttributes::ensureGroup() > 0;
+            && M4pPackagingAttributes::ensureGroup() > 0
+            && M4pPackagingCarrier::saveArrangedGroupIds([]);
     }
 
     /**
@@ -81,7 +82,57 @@ class M4p_packaging extends Module
             && $this->runSqlFile('uninstall.sql')
             && $this->uninstallTab()
             && Configuration::deleteByName(M4pPackagingCarrier::CONFIG_REFERENCE)
+            && Configuration::deleteByName(M4pPackagingCarrier::CONFIG_GROUPS)
             && Configuration::deleteByName(M4pPackagingAttributes::CONFIG_GROUP);
+    }
+
+    public function getContent(): string
+    {
+        $output = '';
+        if (Tools::isSubmit('submitM4pPackaging')) {
+            $groupIds = array_filter(
+                array_column(Group::getGroups((int) $this->context->language->id), 'id_group'),
+                static fn ($idGroup): bool => (bool) Tools::getValue('arranged_groups_' . (int) $idGroup)
+            );
+            $saved = M4pPackagingCarrier::saveArrangedGroupIds($groupIds);
+            $output = $saved
+                ? $this->displayConfirmation($this->trans('Settings saved.', [], 'Modules.M4ppackaging.Admin'))
+                : $this->displayError($this->trans('Settings not saved. Try again.', [], 'Modules.M4ppackaging.Admin'));
+        }
+
+        return $output . $this->renderSettingsForm();
+    }
+
+    private function renderSettingsForm(): string
+    {
+        $groups = Group::getGroups((int) $this->context->language->id);
+
+        $helper = new HelperForm();
+        $helper->module = $this;
+        $helper->name_controller = $this->name;
+        $helper->token = Tools::getAdminTokenLite('AdminModules');
+        $helper->currentIndex = AdminController::$currentIndex . '&configure=' . $this->name;
+        $helper->submit_action = 'submitM4pPackaging';
+        $helper->default_form_language = (int) $this->context->language->id;
+        $selectedGroupIds = M4pPackagingCarrier::getArrangedGroupIds();
+        foreach ($groups as $group) {
+            $idGroup = (int) $group['id_group'];
+            $helper->fields_value['arranged_groups_' . $idGroup] = in_array($idGroup, $selectedGroupIds, true);
+        }
+
+        return $helper->generateForm([[
+            'form' => [
+                'legend' => ['title' => $this->trans('Arranged delivery', [], 'Modules.M4ppackaging.Admin')],
+                'input' => [[
+                    'type' => 'checkbox',
+                    'name' => 'arranged_groups',
+                    'label' => $this->trans('Customer groups with arranged delivery only', [], 'Modules.M4ppackaging.Admin'),
+                    'desc' => $this->trans('A customer in a selected group (default or additional) sees only arranged delivery at checkout, whatever the cart holds.', [], 'Modules.M4ppackaging.Admin'),
+                    'values' => ['query' => $groups, 'id' => 'id_group', 'name' => 'name'],
+                ]],
+                'submit' => ['title' => $this->trans('Save', [], 'Modules.M4ppackaging.Admin')],
+            ],
+        ]]);
     }
 
     public function installTab(): bool

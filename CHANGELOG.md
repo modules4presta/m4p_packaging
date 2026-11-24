@@ -4,6 +4,22 @@ All notable changes to this module are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the module uses
 [semantic versioning](https://semver.org/).
 
+## [1.2.0] - 2026-11-24
+
+### Added
+
+- Module settings page with customer groups that see only arranged delivery at checkout, whatever the cart
+  holds (default or additional group). Setting `M4P_PACKAGING_ARRANGED_GROUPS`, none selected by default.
+
+### Changed
+
+- The back-office packages endpoint checks the request with PrestaShop's admin token check, which accepts the
+  PrestaShop 9 back-office tokens.
+
+### Upgrade
+
+`upgrade/upgrade-1.2.0.php` creates the setting with no groups when it is missing.
+
 ## [1.1.0] - 2026-11-23
 
 First open-source release, published under the MIT license.
