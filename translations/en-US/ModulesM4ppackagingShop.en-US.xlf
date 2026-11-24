@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="module" source-language="en-US" target-language="en-US" datatype="plaintext">
+    <body>
+      <trans-unit id="9944d8e8e42b38975453ded171d4ceb0">
+        <source>%price% / pc</source>
+        <target state="final">%price% / pc</target>
+      </trans-unit>
+      <trans-unit id="e6148fcaa2b613b646ddf6767718a18a">
+        <source>%units% pcs with your cart – %missing% pcs to go.</source>
+        <target state="final">%units% pcs with your cart – %missing% pcs to go.</target>
+      </trans-unit>
+      <trans-unit id="e5448025a9bdc2e6894054a032ca93ca">
+        <source>%units% pcs with your cart – the order is delivered on a date agreed with you.</source>
+        <target state="final">%units% pcs with your cart – the order is delivered on a date agreed with you.</target>
+      </trans-unit>
+      <trans-unit id="0c9cbe1717eab9df13783ae33a218e8a">
+        <source>Arranged delivery from %threshold% pcs of this product – delivery date agreed after contact.</source>
+        <target state="final">Arranged delivery from %threshold% pcs of this product – delivery date agreed after contact.</target>
+      </trans-unit>
+      <trans-unit id="29d589f9b964341f2dba7aae5f65f22a">
+        <source>Choose a package</source>
+        <target state="final">Choose a package</target>
+      </trans-unit>
+      <trans-unit id="710fb4d4bdd7d61296251692cf51f099">
+        <source>Minimum order: {count, plural, one {# package} other {# packages}}</source>
+        <target state="final">Minimum order: {count, plural, one {# package} other {# packages}}</target>
+      </trans-unit>
+      <trans-unit id="6f07b7b0f580c0e45af88ec59019fc5f">
+        <source>{count, plural, one {# pc} other {# pcs}}</source>
+        <target state="final">{count, plural, one {# pc} other {# pcs}}</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

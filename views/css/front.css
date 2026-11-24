@@ -1,0 +1,86 @@
+/*
+ * m4p_packaging
+ *
+ * @author    Modules4Presta <contact@modules4presta.io>
+ * @copyright 2026 Nice Code sp. z o.o. (Modules4Presta)
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
+
+:where(.m4p-packaging) {
+  margin-bottom: 1rem;
+}
+
+:where(.m4p-packaging__fieldset) {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:where(.m4p-packaging__label) {
+  margin-bottom: 0.5rem;
+  font-size: inherit;
+  font-weight: 600;
+}
+
+:where(.m4p-packaging__options) {
+  display: grid;
+  gap: 0.5rem;
+}
+
+:where(.m4p-packaging__option) {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid rgb(0 0 0 / 20%);
+  border-radius: 0.5rem;
+}
+
+:where(.m4p-packaging__option:has(.m4p-packaging__input:checked)) {
+  border-color: currentcolor;
+}
+
+:where(.m4p-packaging__input) {
+  flex-shrink: 0;
+  margin: 0.2em 0 0;
+}
+
+:where(.m4p-packaging__body) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+:where(.m4p-packaging__name) {
+  font-weight: 600;
+}
+
+:where(.m4p-packaging__unit-price),
+:where(.m4p-packaging__moq) {
+  font-size: 0.875em;
+  opacity: 0.75;
+}
+
+:where(.m4p-packaging__price) {
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+:where(.m4p-packaging__threshold) {
+  margin-top: 0.75rem;
+  font-size: 0.875em;
+}
+
+:where(.m4p-packaging__threshold-title),
+:where(.m4p-packaging__threshold-status) {
+  margin: 0;
+}
+
+:where(.m4p-packaging__threshold-status) {
+  min-height: 1.5em;
+}

@@ -1,0 +1,27 @@
+{
+    "name": "modules4presta/m4p_packaging",
+    "description": "Sells PrestaShop products in packages of several pieces, with a price per package and an arranged delivery carrier for large orders.",
+    "type": "prestashop-module",
+    "license": "MIT",
+    "homepage": "https://nice-code.com/pl/oferta/moduly-prestashop",
+    "authors": [
+        {
+            "name": "Modules4Presta",
+            "email": "contact@modules4presta.io",
+            "homepage": "https://nice-code.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "classmap": [
+            "m4p_packaging.php",
+            "classes/",
+            "controllers/"
+        ]
+    },
+    "config": {
+        "prepend-autoloader": false
+    }
+}

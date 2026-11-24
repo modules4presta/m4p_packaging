@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS `PREFIX_m4p_package`;
+DROP TABLE IF EXISTS `PREFIX_m4p_product_config`;

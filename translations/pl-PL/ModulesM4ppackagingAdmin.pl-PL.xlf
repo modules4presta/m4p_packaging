@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="module" source-language="en-US" target-language="pl-PL" datatype="plaintext">
+    <body>
+      <trans-unit id="652122103181aa2752efaecab300edf0">
+        <source>Access denied.</source>
+        <target state="final">Brak dostępu.</target>
+      </trans-unit>
+      <trans-unit id="f75a31729977824ea71a17ed887f1709">
+        <source>Add package</source>
+        <target state="final">Dodaj opakowanie</target>
+      </trans-unit>
+      <trans-unit id="06e1b2315ab01103ba81132ddcba3813">
+        <source>Arranged delivery</source>
+        <target state="final">Dostawa uzgodniona</target>
+      </trans-unit>
+      <trans-unit id="a9d11d7617121c461c7c2f26b16918b8">
+        <source>Arranged delivery from (pieces)</source>
+        <target state="final">Dostawa uzgodniona od (szt.)</target>
+      </trans-unit>
+      <trans-unit id="be2a4432b69019627d228ed10f81ec03">
+        <source>Arranged delivery threshold must be 0 or more pieces.</source>
+        <target state="final">Próg dostawy uzgodnionej musi wynosić 0 szt. lub więcej.</target>
+      </trans-unit>
+      <trans-unit id="d3d2e617335f08df83599665eef8a418">
+        <source>Close</source>
+        <target state="final">Zamknij</target>
+      </trans-unit>
+      <trans-unit id="d321ed2c8a705ce034a971e28c1cbd89">
+        <source>Configure packages</source>
+        <target state="final">Konfiguruj opakowania</target>
+      </trans-unit>
+      <trans-unit id="4ce7ad76ac0d39f49a1a4d6caddc0b7d">
+        <source>Delivery date agreed with you after the order</source>
+        <target state="final">Termin dostawy ustalany po kontakcie</target>
+      </trans-unit>
+      <trans-unit id="a1da5fedc6834a1568a7cdbe33942f9d">
+        <source>Each package becomes a combination of the product. The customer picks a package and orders a number of packages.</source>
+        <target state="final">Każde opakowanie to osobna kombinacja produktu. Klient wybiera opakowanie i zamawia liczbę opakowań.</target>
+      </trans-unit>
+      <trans-unit id="8f081e2c9ae830dc179b65a9dc20c9e2">
+        <source>Each package needs a different number of pieces.</source>
+        <target state="final">Każde opakowanie musi mieć inną liczbę sztuk.</target>
+      </trans-unit>
+      <trans-unit id="40f86ffd0666a6d7c62f48e9929ff627">
+        <source>Gross price per package (%currency%)</source>
+        <target state="final">Cena brutto za opakowanie (%currency%)</target>
+      </trans-unit>
+      <trans-unit id="9218d0078bd940462537d0733e72c61e">
+        <source>Gross price per package must be 0 or more.</source>
+        <target state="final">Cena brutto za opakowanie musi wynosić 0 lub więcej.</target>
+      </trans-unit>
+      <trans-unit id="0aa9d1e2c34fd83d67e7d6fa0a28e781">
+        <source>Invalid package list.</source>
+        <target state="final">Nieprawidłowa lista opakowań.</target>
+      </trans-unit>
+      <trans-unit id="5f02f05c744a0f875aebb8625ae1486f">
+        <source>Loading…</source>
+        <target state="final">Ładowanie…</target>
+      </trans-unit>
+      <trans-unit id="89799fcf7b6532c2f64766c8fa294cbc">
+        <source>Minimum packages per order</source>
+        <target state="final">Minimalna liczba opakowań w zamówieniu</target>
+      </trans-unit>
+      <trans-unit id="f3e50e121a0a514bedf4f405a2b00da8">
+        <source>Minimum packages per order must be 1 or more.</source>
+        <target state="final">Minimalna liczba opakowań musi wynosić 1 lub więcej.</target>
+      </trans-unit>
+      <trans-unit id="4bc6d41da35a94d1f864fff35c7e2df7">
+        <source>No connection with the shop. Try again.</source>
+        <target state="final">Brak połączenia ze sklepem. Spróbuj ponownie.</target>
+      </trans-unit>
+      <trans-unit id="209802fb858e2c83205027dbbb5d9e6c">
+        <source>Package</source>
+        <target state="final">Opakowanie</target>
+      </trans-unit>
+      <trans-unit id="d3e3083bde567b0320557ca1876457ff">
+        <source>Package (pieces)</source>
+        <target state="final">Opakowanie (sztuki)</target>
+      </trans-unit>
+      <trans-unit id="761802aece99f6a61c36094d0857029f">
+        <source>Package variants</source>
+        <target state="final">Warianty opakowania</target>
+      </trans-unit>
+      <trans-unit id="1b860ed4079bcc640b980a86925e0816">
+        <source>Packages could not be loaded. Reload the page.</source>
+        <target state="final">Nie udało się wczytać opakowań. Odśwież stronę.</target>
+      </trans-unit>
+      <trans-unit id="0aa733b723959156af91d11970077454">
+        <source>Packages not saved:</source>
+        <target state="final">Opakowania nie zostały zapisane:</target>
+      </trans-unit>
+      <trans-unit id="fde8e3d7612f65b044db08e112c1b31e">
+        <source>Packages saved. Reload the page to see the combinations.</source>
+        <target state="final">Opakowania zapisane. Kombinacje będą widoczne po odświeżeniu strony.</target>
+      </trans-unit>
+      <trans-unit id="ea1b9e15ae3c46880d33e377a3ccc896">
+        <source>Pieces of this product in the cart (packages x pieces per package) from which arranged delivery is the only delivery option at checkout. 0 – never.</source>
+        <target state="final">Liczba sztuk tego produktu w koszyku (opakowania × sztuki w opakowaniu), od której dostawa uzgodniona jest jedyną opcją dostawy w zamówieniu. 0 – nigdy.</target>
+      </trans-unit>
+      <trans-unit id="068d8598ea4e7689bff4a7859a66b310">
+        <source>Pieces per package</source>
+        <target state="final">Sztuk w opakowaniu</target>
+      </trans-unit>
+      <trans-unit id="a34dec213207b092759f0e83f7a99e49">
+        <source>Pieces per package must be 1 or more.</source>
+        <target state="final">Liczba sztuk w opakowaniu musi wynosić 1 lub więcej.</target>
+      </trans-unit>
+      <trans-unit id="a580ee4a8f93afc9b379c52023739f22">
+        <source>Price the customer pays for one package, tax included. The combination price is recalculated from it when the product price or tax rule changes.</source>
+        <target state="final">Cena jednego opakowania z podatkiem, którą płaci klient. Cena kombinacji przelicza się z niej po zmianie ceny produktu lub reguły podatkowej.</target>
+      </trans-unit>
+      <trans-unit id="e4000a1cbe889f868f82b1b177936841">
+        <source>Product not found.</source>
+        <target state="final">Nie znaleziono produktu.</target>
+      </trans-unit>
+      <trans-unit id="1063e38cb53d94d386f21227fcd84717">
+        <source>Remove</source>
+        <target state="final">Usuń</target>
+      </trans-unit>
+      <trans-unit id="bbf2e7f01c49eb5ab4c5a7252605f754">
+        <source>Save packages</source>
+        <target state="final">Zapisz opakowania</target>
+      </trans-unit>
+      <trans-unit id="43f56a9623550e4dfb3571b172ceff96">
+        <source>Saving failed. Details are in Advanced Parameters &gt; Logs.</source>
+        <target state="final">Zapis nie powiódł się. Szczegóły w Zaawansowane &gt; Dzienniki zdarzeń.</target>
+      </trans-unit>
+      <trans-unit id="eedf6b8bfc83284c3294ec4b38188e8a">
+        <source>Saving…</source>
+        <target state="final">Zapisywanie…</target>
+      </trans-unit>
+      <trans-unit id="b9cc191dda88e3cb375e3871fd10ea67">
+        <source>Sells products in packages with a minimum order per package and an arranged delivery option from a number of units.</source>
+        <target state="final">Sprzedaż produktów w opakowaniach z minimalnym zamówieniem i dostawą uzgodnioną od określonej liczby sztuk.</target>
+      </trans-unit>
+      <trans-unit id="9258e257348c7e4f8c948d5ca16a35d5">
+        <source>Unknown action.</source>
+        <target state="final">Nieznana operacja.</target>
+      </trans-unit>
+      <trans-unit id="6f07b7b0f580c0e45af88ec59019fc5f">
+        <source>{count, plural, one {# pc} other {# pcs}}</source>
+        <target state="final">{count, plural, other {# szt.}}</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

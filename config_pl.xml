@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>m4p_packaging</name>
+    <displayName><![CDATA[Warianty opakowania]]></displayName>
+    <version><![CDATA[1.1.0]]></version>
+    <description><![CDATA[Sprzedaż produkt&oacute;w w opakowaniach z minimalnym zam&oacute;wieniem i dostawą uzgodnioną od określonej liczby sztuk.]]></description>
+    <author><![CDATA[Modules4Presta]]></author>
+    <tab><![CDATA[pricing_promotion]]></tab>
+    <is_configurable>0</is_configurable>
+    <need_instance>0</need_instance>
+</module>
